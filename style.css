@@ -1,3 +1,8 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
 .container {
   display: grid;
   height: 100vh;
@@ -9,46 +14,74 @@
     "sidebar content1 content2 content3"
     "sidebar footer footer footer";
   grid-gap: 0.2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #004d40;
+  text-align: center;
 }
 
 nav {
   grid-area: nav;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #a7ffeb;
 }
 
 main {
   grid-area: main;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #84ffff;
 }
 
 #sidebar {
   grid-area: sidebar;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #18ffff;
 }
 
 #content1 {
   grid-area: content1;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #6fffd2;
 }
 
 #content2 {
   grid-area: content2;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #64ffda;
 }
 
 #content3 {
   grid-area: content3;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #6fffd2;
 }
 
 footer {
   grid-area: footer;
-  border-radius: 5px;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
   background-color: #1de9b6;
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.3fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
 }
